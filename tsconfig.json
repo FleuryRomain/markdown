@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "jsx": "react",
+        "jsxFactory": "h",
+        "strict": true
+    }
+}
