@@ -1,4 +1,5 @@
-import {h, render} from 'preact'
+import {h, render, Component} from 'preact'
+import Editor from './components/editor'
 
 let textareas = document.querySelectorAll('textarea.mdeditor') as NodeListOf<HTMLTextAreaElement>
 
@@ -8,6 +9,12 @@ textareas.forEach(function(textarea){
     let div = document.createElement('div')
     if(textarea.parentNode){
         textarea.parentNode.replaceChild(div, textarea)
-        render(<div>Salut</div>,div)
+        render(<Editor name={name} value={value} />,div)
     }    
 })
+
+if(module.hot){
+    module.hot.accept(function() {
+        window.location.reload();
+    });
+}
